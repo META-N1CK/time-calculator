@@ -25,17 +25,30 @@ body {
   min-height: 550px;
   border-radius: 8px;
     box-shadow: 0 0 20px black;
-    gap: 50px;
+    gap: 30px;
 }
 
 .inputs {
   display: flex;
   flex-direction: column;
-  height: 300px;
+  height: 350px;
   justify-content: space-between;
+  gap
 }
 
-.inputs > input {
+.inputs > div {
+  display: flex;
+  justify-content: space-between;  
+  flex-direction: column;
+}
+
+.inputs > div > label {
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+.inputs > div > input {
   height: 50px;
   width: 200px;
   border-radius: 8px;
