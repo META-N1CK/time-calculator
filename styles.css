@@ -8,7 +8,7 @@ body {
   min-height: 100vh;
   margin: 0;
   padding: 0;
-  background-color: ghostwhite;
+  background-color: rgb(244, 255, 255);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -33,7 +33,6 @@ body {
   flex-direction: column;
   height: 350px;
   justify-content: space-between;
-  gap
 }
 
 .inputs > div {
@@ -60,4 +59,9 @@ body {
 .timeDisplay {
     color: white;
     font-size: 3rem;
+}
+
+.footer > a {
+  text-decoration: none;
+  color: black;
 }
