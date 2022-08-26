@@ -1,24 +1,18 @@
 function computeTime() {
-  const amTime = (convertTime(fromAM.value) - convertTime(toAM.value)).toFixed(2);
-  const pmTime = (convertTime(fromPM.value) - convertTime(toPM.value)).toFixed(2);
+  const amTime = (convertTime(fromAM.value) - convertTime(toAM.value)).toFixed(
+    2
+  );
+  const pmTime = (convertTime(fromPM.value) - convertTime(toPM.value)).toFixed(
+    2
+  );
   if (isNaN(pmTime)) {
     timeDisplay.innerText = displayTime(parseFloat(amTime));
   } else {
-    timeDisplay.innerText = displayTime((parseFloat(amTime) + parseFloat(pmTime)));
+    timeDisplay.innerText = displayTime(
+      parseFloat(amTime) + parseFloat(pmTime)
+    );
   }
-  
 }
-
-const timeInput = document.querySelectorAll("[data-time]");
-const timeDisplay = document.querySelector("[ data-time-display]");
-const toAM = document.getElementById("to-am");
-const fromAM = document.getElementById("from-am");
-const toPM = document.getElementById("to-pm");
-const fromPM = document.getElementById("from-pm");
-
-timeInput.forEach((time) => {
-  time.addEventListener("change", computeTime);
-});
 
 function convertTime(time) {
   var hoursMinutes = time.split(/[.:]/);
@@ -32,3 +26,25 @@ function displayTime(time) {
   if (time <= 1) return `${time} Hr`;
   return `${time} Hrs`;
 }
+
+function clear() {
+  toAM.value = "";
+  fromAM.value = "";
+  toPM.value = "";
+  fromPM.value = "";
+  timeDisplay.innerText = "0 Hrs";
+}
+
+const timeInput = document.querySelectorAll("[data-time]");
+const timeDisplay = document.querySelector("[ data-time-display]");
+const toAM = document.getElementById("to-am");
+const fromAM = document.getElementById("from-am");
+const toPM = document.getElementById("to-pm");
+const fromPM = document.getElementById("from-pm");
+const clearBtn = document.querySelector("[data-clear]");
+
+timeInput.forEach((time) => {
+  time.addEventListener("change", computeTime);
+});
+
+clearBtn.addEventListener("click", clear);
