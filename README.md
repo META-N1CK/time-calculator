@@ -8,4 +8,4 @@ Created a simple calculator to calculate time difference
 * Javascript
 
 ## Live Post
-[Time Calculator Web Link](https://meta-n1ck.github.io/time-calculator/)
+[Time Calculator Web Link](https://nainsworth.github.io/time-calculator/)
